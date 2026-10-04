@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Games Modding</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: #050505;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    header {
+        padding: 25px;
+        text-align: center;
+        border-bottom: 2px solid #222;
+    }
+
+    .logo {
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }
+
+    .logo span {
+        color: #00aaff;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        padding: 20px;
+        flex-wrap: wrap;
+    }
+
+    button {
+        background: #111;
+        color: white;
+        border: 1px solid #00aaff;
+        padding: 12px 22px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #00aaff;
+        color: black;
+    }
+
+    .page {
+        display: none;
+        max-width: 1000px;
+        margin: auto;
+        padding: 40px 20px;
+    }
+
+    .active {
+        display: block;
+    }
+
+    .hero {
+        text-align: center;
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        color: #aaa;
+        font-size: 18px;
+    }
+
+    .card {
+        background: #0d0d0d;
+        border: 1px solid #222;
+        border-radius: 12px;
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .card:hover {
+        border-color: #00aaff;
+    }
+
+    .tag {
+        color: #00aaff;
+        font-weight: bold;
+    }
+
+    footer {
+        text-align: center;
+        color: #666;
+        padding: 40px;
+        margin-top: 50px;
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        GAMES <span>MODDING</span>
+    </div>
+</header>
+
+<nav>
+    <button onclick="showPage('home')">HOME</button>
+    <button onclick="showPage('mods')">MODS</button>
+    <button onclick="showPage('downloads')">DOWNLOADS</button>
+    <button onclick="showPage('community')">COMMUNITY</button>
+</nav>
+
+<section id="home" class="page active">
+    <div class="hero">
+        <h1>GAMES MODDING</h1>
+        <p>Mods, projects, tools and more.</p>
+        <button onclick="showPage('mods')">VIEW MODS</button>
+    </div>
+</section>
+
+<section id="mods" class="page">
+    <h1>Mods</h1>
+
+    <div class="card">
+        <h2>Example Mod</h2>
+        <p>A place for your first mod.</p>
+        <p class="tag">STATUS: AVAILABLE</p>
+    </div>
+
+    <div class="card">
+        <h2>More Mods Coming</h2>
+        <p>You can add more mods here later.</p>
+    </div>
+</section>
+
+<section id="downloads" class="page">
+    <h1>Downloads</h1>
+
+    <div class="card">
+        <h2>Downloads</h2>
+        <p>Your downloadable projects can go here.</p>
+    </div>
+</section>
+
+<section id="community" class="page">
+    <h1>Community</h1>
+
+    <div class="card">
+        <h2>Discord</h2>
+        <p>Add your Discord community link here.</p>
+    </div>
+</section>
+
+<footer>
+    Games Modding
+</footer>
+
+<script>
+function showPage(pageName) {
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(page => {
+        page.classList.remove("active");
+    });
+
+    document.getElementById(pageName).classList.add("active");
+
+    window.scrollTo(0, 0);
+}
+</script>
+
+</body>
+</html>
